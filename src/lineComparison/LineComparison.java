@@ -2,9 +2,10 @@ package lineComparison;
 
 import java.util.Scanner;
 
+
 public class LineComparison {
 	
-	public static double distance (double x1, double y1, double x2, double y2) {
+	public static double length (double x1, double y1, double x2, double y2) {
 		double x = Math.pow(x2 - x1, 2);
 		double y = Math.pow(y2 - y1, 2);
 		double dist = Math.sqrt(x + y);
@@ -13,27 +14,33 @@ public class LineComparison {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println("Welcome to line Comparison Computation Program ");
 		Scanner sc = new Scanner(System.in);
-		double ax, ay, bx, by, cx, cy, dx, dy;
-		System.out.println("Enter ax Coordinates : ");
-		ax=sc.nextDouble();
-		System.out.println("Enter ay Coordinates : ");
-		ay=sc.nextDouble();
-		System.out.println("Enter bx Coordinates : ");
-		bx=sc.nextDouble();
-		System.out.println("Enter by Coordinates : ");
-		by=sc.nextDouble();
-		System.out.println("Enter cx Coordinates : ");
-		cx=sc.nextDouble();
-		System.out.println("Enter cy Coordinates : ");
-		cy=sc.nextDouble();		
-		System.out.println("Enter dx Coordinates : ");
-		dx=sc.nextDouble();
-		System.out.println("Enter dy Coordinates : ");
-		dy=sc.nextDouble();
-		double distAB = distance(ax, ay, bx, by);
-		double distCD = distance(cx, cy, dx, dy);
+		double x1, y1, x2, y2, x3, y3, x4, y4;
+		
+		System.out.println("Enter x1 Coordinates : ");
+		x1=sc.nextDouble();
+		System.out.println("Enter y1 Coordinates : ");
+		y1=sc.nextDouble();
+		System.out.println("Enter x2 Coordinates : ");
+		x2=sc.nextDouble();
+		System.out.println("Enter y2 Coordinates : ");
+		y2=sc.nextDouble();
+		System.out.println("Enter x3 Coordinates : ");
+		x3=sc.nextDouble();
+		System.out.println("Enter y3 Coordinates : ");
+		y3=sc.nextDouble();		
+		System.out.println("Enter x4 Coordinates : ");
+		x4=sc.nextDouble();
+		System.out.println("Enter y4 Coordinates : ");
+		y4=sc.nextDouble();
+		
+		double lineLength1 = length(x1, y1, x2, y2);
+		double lineLength2 = length(x3, y3, x4, y4);
+		
+		System.out.println("Length of Line 1 is : " +lineLength1);
+		System.out.println("Length of Line 2 is : " +lineLength2);
+	
+	
 	}
 
 }
