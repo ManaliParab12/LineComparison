@@ -2,9 +2,6 @@ package lineComparison;
 
 import java.util.Scanner;
 
-import line.Line;
-
-
 public class LineComparison {
 	
 	public static double length (double x1, double y1, double x2, double y2) {
@@ -47,6 +44,7 @@ public class LineComparison {
 		
 		Line l = new Line(l1,l2);
 		l.lineEquality(l1, l2);
+		l.compare(l1,l2);
 	
 	
 	}
