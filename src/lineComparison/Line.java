@@ -24,4 +24,23 @@ public class Line {
 			 System.out.println("The given lines are not equal");
 				 }
 		 }
+	 
+	 public void compare(Line l1, Line l2) {
+			
+			if(l1.compareTo(l2)==0) {
+				System.out.println("The lines are equal");		
+			}
+			else if(l1.compareTo(l2)<0){
+				System.out.println("The First line is smaller than Second line");
+			}				
+			else if(l1.compareTo(l2)>0){
+				System.out.println("The First line is larger than Second line");
+			}				
+			
+		}
+
+		private int compareTo(Line l2) {
+			return 0;
+		}
+
 }
