@@ -2,6 +2,8 @@ package lineComparison;
 
 import java.util.Scanner;
 
+import line.Line;
+
 
 public class LineComparison {
 	
@@ -39,6 +41,12 @@ public class LineComparison {
 		
 		System.out.println("Length of Line 1 is : " +lineLength1);
 		System.out.println("Length of Line 2 is : " +lineLength2);
+		
+		Line l1 = new Line(x1, y1, x2, y2);
+		Line l2 = new Line(x3, y3, x4, y4);
+		
+		Line l = new Line(l1,l2);
+		l.lineEquality(l1, l2);
 	
 	
 	}
