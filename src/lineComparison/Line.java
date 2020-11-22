@@ -3,11 +3,11 @@ package lineComparison;
 public class Line {
 	
 	double x1,y1,x2,y2; 
-	 
-	 public Line(Line l1, Line l2) {
-		 
+	Line l1,l2;
+	
+	 public Line(Line l1, Line l2) {		 
 	 }
-	 
+		 
 	 public Line(double x1, double y1, double x2, double y2) {
 		 this.x1 = x1;
 		 this.y1 = y1;
@@ -15,9 +15,17 @@ public class Line {
 		 this.y2 = y2;
 		 }
 	 
-	 public void lineEquality(Line l1, Line l2) {		
-		 
-		 if(l1.equals(l2)) {
+	 public double length (double x1, double y1, double x2, double y2) {		 
+			double x = Math.pow(x2 - x1, 2);
+			double y = Math.pow(y2 - y1, 2);
+			double Length = Math.sqrt(x + y);	
+			//double Length = Math.sqrt( Math.pow(x2 - x1, 2)+ Math.pow(y2 - y1, 2));	
+			
+			return Length;
+		}
+	 
+	 public void lineEquality(Line l1, Line l2) {
+			 if(l1.equals(l2)) {
 			 System.out.println("The given lines are equal");		
 			 }
 		 else {
@@ -25,22 +33,23 @@ public class Line {
 				 }
 		 }
 	 
-	 public void compare(Line l1, Line l2) {
-			
-			if(l1.compareTo(l2)==0) {
+	 public int compareTo(Line l1, Line l2) {
+		 
+	     Double lineLength1 = length(x1, y1, x2, y2);
+		 Double lineLength2 = length(x1, y1, x2, y2);
+		 System.out.println("Length of Line 1 is : " +lineLength1);
+		 System.out.println("Length of Line 2 is : " +lineLength2);						 
+			int Compare = lineLength1.compareTo(lineLength2);
+			if(Compare == 0) {
 				System.out.println("The lines are equal");		
 			}
-			else if(l1.compareTo(l2)<0){
+			else if(Compare < 0){
 				System.out.println("The First line is smaller than Second line");
 			}				
-			else if(l1.compareTo(l2)>0){
+			else if(Compare >0){
 				System.out.println("The First line is larger than Second line");
-			}				
-			
-		}
-
-		private int compareTo(Line l2) {
-			return 0;
+			}	
+			return Compare;			
 		}
 
 }
